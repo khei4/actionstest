@@ -10,3 +10,4 @@ jobs:
           ls -al
           cd .github/workflows/
           ls -al
+      - uses: actions/chache@v2
