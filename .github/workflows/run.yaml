@@ -1,13 +1,11 @@
 name: learn-github-actions
 on: [push]
+env:
+  env_1: hashito
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "this is pen"
       - uses: actions/checkout@v2
       - run: |
-          ls -al
-          cd .github/workflows/
-          ls -al
-      - uses: actions/chache@v2
+          echo "ths is env=${{ env.env_1 }}"
