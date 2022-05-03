@@ -10,6 +10,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
+        with:
+          install: true
       - name: Cache Docker layers
         uses: actions/cache@v2
         with:
@@ -30,6 +32,7 @@ jobs:
           --cache-from=type=local,src=/tmp/.buildx-cache \
           --cache-to=type=local,dest=/tmp/.buildx-cache-new,mode=max \
           -t ubuntu:latest \
+          -f Dockerfile
           .
       - name: Move cache
         run: |
