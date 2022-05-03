@@ -38,7 +38,7 @@ jobs:
         name: Move cache
         env:
           HOGE: aaa
-          FUGA: ${HOGE}/${HOGE}
+          FUGA: ${{HOGE}}/${{HOGE}}
         run: |
           rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
